@@ -1,49 +1,52 @@
-# 📉 Collection Intelligence & Recovery Prediction
-### *Production-Grade SQL + ML Analytics — Pallav Technologies*
+# 📉 Collection Intelligence & Operational Strategy
+### *Risk-Based Decisining + Asset Recovery Pipeline*
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://python.org)
-[![SQL](https://img.shields.io/badge/SQL-SQLite%2FPostgreSQL--Compatible-orange?logo=sqlite)](https://sqlite.org)
-[![Dataset](https://img.shields.io/badge/Dataset-LendingClub-blue)](https://www.lendingclub.com)
+[![SQL](https://img.shields.io/badge/SQL-Operational%20Queuing-orange?logo=sqlite)](https://sqlite.org)
+[![ROI](https://img.shields.io/badge/Efficiency-Multiplier--Applied-green)](https://en.wikipedia.org/wiki/Operational_efficiency)
 
 ---
 
-## 🎯 Business Problem
-Collections yield is the most sensitive metric in retail lending. This project uses real **LendingClub** performance data to optimize recovery strategies. It specifically addresses how to prioritize agent efforts using risk-weighted outstanding balances.
+## 🎯 Operational Decision Layer
+This project automates the **Collections Agent Desk** by moving from random outreach to a **Risk-Weighted Priority Queue**.
+
+### 📋 Final Agent Action Queue (Automated)
+The system outputs a live priority list with specific operational actions:
+- **🔥 CALL IMMEDIATELY**: High balance at risk + Late-stage buckets.
+- **📞 Agent Call**: Standard delinquency follow-up.
+- **📱 SMS + IVR**: Early-stage automated reminders.
+- **✉️ Email Sequence**: Low-value/Current-segment nurture.
 
 ---
 
-## 📊 SQL Analytics Engine (`collections_sql.py`)
-
-The analytics engine calculates real-time recovery metrics and generates an optimized agent queue.
-
-### Key Analysis:
-- **Recovery Metrics by Grade**: Real-time tracking of `Amount Recovered vs. Disbursed` across risk grades.
-- **Agent Priority Queue**: A risk-weighted ranking system (`Balance * (1.2 - Recovery Rate)`) to identify high-value/high-risk accounts for immediate contact.
-- **Cumulative Loss Tracking**: Using `SUM() OVER()` to track loss exposure as the portfolio ages.
+## 📊 Business KPI: Recovery Efficiency
+We measure the **Recovery Efficiency Multiplier** by comparing our model-driven strategy against a random outreach baseline.
+- **Goal**: Catch the highest volume of defaults with the lowest operational capacity (Top 20% of calls).
+- **Result**: Demonstrated efficiency gains by focusing on high-PD cohorts early in the delinquency cycle.
 
 ---
 
-## 🤖 ML Recovery Modeling (`recovery_analysis.py`)
-
-- **Model**: Logistic Regression (Interpretable Logit).
-- **Target**: Charged Off vs. Fully Paid.
-- **Insight**: Models the probability of loss based on borrower income, debt-to-income (DTI), and loan installment size.
+## 🏗️ Segmentation & Bucketing
+The SQL layer implements a rigorous **Bucketing System** to track aging assets:
+- **Bucket 0**: Current (Healthy)
+- **Bucket 1**: 1-30 Days Late (Early Delinquency)
+- **Bucket 2**: 31-90 Days Late (NPL Risk)
+- **Bucket 4**: 90+ Days / Charged Off (NPL Recovery)
 
 ---
 
-## 📂 Data Sources
-This project use a subset of the LendingClub loan performance dataset.
-- **Key Features**: Annual Income, DTI, Paid Principal, Interest, Late Fees.
-- **Volume**: 10,000 credit records.
+## 📂 Data & Methodology
+- **Dataset**: LendingClub (Real P2P loan performance).
+- **Strategy**: SQL-driven prioritization score calculated as `Balance * (1.2 - Predicted Recovery Rate)`.
+- **Visualization**: Segmentation heatmaps and Loss Exposure charts.
 
 ---
 
 ## 🔍 Visual Insights
-Generated dashboards include:
-1. **Recovery Rate by Grade**: Visualizing the drop-off in performance for lower-tier loans.
-2. **Disbursement vs Recovery**: Volume analysis by loan quality.
-3. **Priority Queue Visualization**: Ranking delinquent IDs by predicted recovery value.
+- **Recovery Rate by Bucket**: Identifying where recovery effort yields the highest return.
+- **Operational Decision Layer**: Preview of the top-5 actionable IDs in the agent queue.
+- **Realized Loss Analysis**: Visualizing where the portfolio is bleeding capital.
 
 ---
 
-*Built for Pallav Technologies Portfolio — Advanced Collections Pillar.*
+*Fintech Data Analyst Portfolio — Operations & Recovery Pillar.*
