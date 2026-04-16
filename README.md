@@ -1,20 +1,49 @@
-# Loan Collection & Recovery Dashboard
+# 📉 Collection Intelligence & Recovery Prediction
+### *Production-Grade SQL + ML Analytics — Pallav Technologies*
 
-An analytics-driven approach to optimizing Non-Performing Loan (NPL) recovery. This project identifies repayment probabilities and optimizes collection strategies to prioritize high-value delinquent loans.
-
-## Key Features
-- **Roll-Rate Analysis**: Visualizes the probability of recovery across different delinquency buckets (1-30 DPD to 90+ DPD).
-- **Collection Prioritization**: Segments loans into "Standard", "High Priority", and **"Self-Healers"** to optimize operational spend.
-- **Predictive Modeling**: Uses Logistic Regression to estimate recovery chances based on DPD and principal balance.
-
-## Results
-- **Accuracy**: 0.77
-- **Business Insight**: Identified that recovery drops by over 50% once a loan crosses the 90-day delinquency mark.
-
-## Project Structure
-- `recovery_analysis.py`: Main analysis and classification script.
-- `collections_data_generator.py`: Synthetic portfolio data generator.
-- `loan_collections_data.csv`: Sample delinquency dataset.
-- `*.png`: Visualizations of recovery rates and strategy distribution.
+[![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://python.org)
+[![SQL](https://img.shields.io/badge/SQL-SQLite%2FPostgreSQL--Compatible-orange?logo=sqlite)](https://sqlite.org)
+[![Dataset](https://img.shields.io/badge/Dataset-LendingClub-blue)](https://www.lendingclub.com)
 
 ---
+
+## 🎯 Business Problem
+Collections yield is the most sensitive metric in retail lending. This project uses real **LendingClub** performance data to optimize recovery strategies. It specifically addresses how to prioritize agent efforts using risk-weighted outstanding balances.
+
+---
+
+## 📊 SQL Analytics Engine (`collections_sql.py`)
+
+The analytics engine calculates real-time recovery metrics and generates an optimized agent queue.
+
+### Key Analysis:
+- **Recovery Metrics by Grade**: Real-time tracking of `Amount Recovered vs. Disbursed` across risk grades.
+- **Agent Priority Queue**: A risk-weighted ranking system (`Balance * (1.2 - Recovery Rate)`) to identify high-value/high-risk accounts for immediate contact.
+- **Cumulative Loss Tracking**: Using `SUM() OVER()` to track loss exposure as the portfolio ages.
+
+---
+
+## 🤖 ML Recovery Modeling (`recovery_analysis.py`)
+
+- **Model**: Logistic Regression (Interpretable Logit).
+- **Target**: Charged Off vs. Fully Paid.
+- **Insight**: Models the probability of loss based on borrower income, debt-to-income (DTI), and loan installment size.
+
+---
+
+## 📂 Data Sources
+This project use a subset of the LendingClub loan performance dataset.
+- **Key Features**: Annual Income, DTI, Paid Principal, Interest, Late Fees.
+- **Volume**: 10,000 credit records.
+
+---
+
+## 🔍 Visual Insights
+Generated dashboards include:
+1. **Recovery Rate by Grade**: Visualizing the drop-off in performance for lower-tier loans.
+2. **Disbursement vs Recovery**: Volume analysis by loan quality.
+3. **Priority Queue Visualization**: Ranking delinquent IDs by predicted recovery value.
+
+---
+
+*Built for Pallav Technologies Portfolio — Advanced Collections Pillar.*
