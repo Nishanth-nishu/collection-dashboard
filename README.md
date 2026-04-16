@@ -18,4 +18,3 @@ An analytics-driven approach to optimizing Non-Performing Loan (NPL) recovery. T
 - `*.png`: Visualizations of recovery rates and strategy distribution.
 
 ---
-*Created for Pallav Technologies Data Analyst Portfolio.*
